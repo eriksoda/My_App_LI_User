@@ -5,7 +5,7 @@
 #### Import packages
 import streamlit as st
 from textblob import TextBlob
-from plotly import graph_objs as go
+
 
 #### Add header to describe app
 st.markdown("# Sentiment Analysis Application!!")
@@ -29,19 +29,3 @@ else:
 #### Print sentiment score, label, and language
 st.markdown(f"Sentiment label: **{label}**")
 
-#### Create sentiment gauge
-fig = go.Figure(go.Indicator(
-    mode = "gauge+number",
-    value = score,
-    title = {'text': f"Sentiment: {label}"},
-    gauge = {"axis": {"range": [-1, 1]},
-            "steps": [
-                {"range": [-1, -.15], "color":"red"},
-                {"range": [-.15, .15], "color":"gray"},
-                {"range": [.15, 1], "color":"lightgreen"}
-            ],
-            "bar":{"color":"yellow"}}
-))
-
-
-st.plotly_chart(fig)
