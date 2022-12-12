@@ -10,7 +10,7 @@ st.markdown("# Are You LinkedIn?")
 st.markdown("## Find out below!")
 
 st.markdown("#### Our Data:")
-s = pd.read_csv(r"C:\Users\Erik\Desktop\Project ST")
+s = pd.read_csv(r".\Project ST")
 
 
 def clean_sm(x):
